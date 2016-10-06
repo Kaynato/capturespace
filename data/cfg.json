@@ -1,0 +1,24 @@
+{
+	"port": 3000,
+	"teamcolors": true,
+	"player": {
+		"mass": 5,
+		"radius": 2
+	},
+	"item": {
+		"mass": 0,
+		"radius": 1
+	},
+	"room": {
+		"playersPerTeam": 1,
+		"teams": 2,
+		"radius": 200,
+		"PSIDES": 150,
+		"PSPAWN": 100, 
+		"PJAILS": 50
+	},
+	"pass": {
+		"hash":"1063f78be0a2b0c0d37ab291c45fc405b8aa6711d5cbd3e34051c2a84337c105",
+		"salt":"Դʔƌֽ͔ĦӬѐ֔Ҥʆː֔نඑ૸࢘ഴα՜ɾୀÙເೃݰᇆׄᘝᗸ"
+	}
+}

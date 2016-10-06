@@ -1,0 +1,356 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14498,        347]
+NotebookOptionsPosition[     14150,        330]
+NotebookOutlinePosition[     14523,        346]
+CellTagsIndexPosition[     14480,        343]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Spawning", " ", "with", " ", "half", " ", "radius", " ", "of", " ", 
+    "circle", " ", "of", " ", "intersection", " ", "of", " ", "spawn", " ", 
+    "plane", " ", "with", " ", "shell"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p1", "=", 
+     RowBox[{"0.5", 
+      RowBox[{"\[Sqrt]", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", "PSPAWN", "*", "RRADIUS"}], "-", 
+         SuperscriptBox["PSPAWN", "2"]}], ")"}]}], "*", 
+      RowBox[{"AngleVector", "/@", 
+       RowBox[{"(", 
+        RowBox[{"2", "\[Pi]", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"Range", "[", "PPT", "]"}], "-", "1"}], "PPT"]}], 
+        ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"p2", "=", 
+     RowBox[{"0.5", 
+      RowBox[{"\[Sqrt]", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", "PSPAWN", "*", "RRADIUS"}], "-", 
+         SuperscriptBox["PSPAWN", "2"]}], ")"}]}], "*", 
+      RowBox[{"AngleVector", "/@", 
+       RowBox[{"(", 
+        RowBox[{"2", "\[Pi]", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"Range", "[", "PPT", "]"}], "-", 
+           FractionBox["1", "2"]}], "PPT"]}], ")"}]}]}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"q1", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Append", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"RRADIUS", "-", "PSPAWN"}]}], "]"}], "&"}], "/@", "p1"}]}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{"q2", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Append", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"PSPAWN", "-", "RRADIUS"}]}], "]"}], "&"}], "/@", "p2"}]}], 
+    ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Spawn disk radius: \>\"", ",", 
+      RowBox[{"\[Sqrt]", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", "PSPAWN", "*", "RRADIUS"}], "-", 
+         SuperscriptBox["PSPAWN", "2"]}], ")"}]}], ",", "\"\<\\n\>\"", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"Spawn", " ", "Plane", " ", "Cross"}], "-", "section"}], 
+       "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{"Red", ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Disk", "[", 
+             RowBox[{"#", ",", "PRADIUS"}], "]"}], "&"}], "/@", "p1"}], ",", 
+          "\[IndentingNewLine]", "Blue", ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Disk", "[", 
+             RowBox[{"#", ",", "PRADIUS"}], "]"}], "&"}], "/@", "p2"}]}], 
+         "\[IndentingNewLine]", "}"}], "]"}], "\[IndentingNewLine]", "]"}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"Entire", " ", "Sphere"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"Graphics3D", "[", "\[IndentingNewLine]", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{"Red", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Sphere", "[", 
+             RowBox[{"#", ",", "PRADIUS"}], "]"}], "&"}], "/@", "q1"}], ",", 
+          "\[IndentingNewLine]", "Blue", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Sphere", "[", 
+             RowBox[{"#", ",", "PRADIUS"}], "]"}], "&"}], "/@", "q2"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Opacity", "[", "0.2", "]"}], ",", "Gray", ",", 
+          RowBox[{"Sphere", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "RRADIUS"}], 
+           "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Opacity", "[", "0.05", "]"}], ",", 
+          RowBox[{"EdgeForm", "[", "]"}], ",", "Red", ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Cylinder", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "0", ",", 
+                  RowBox[{"RRADIUS", "-", "#", "-", "0.5"}]}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "0", ",", 
+                  RowBox[{"RRADIUS", "-", "#", "+", "0.5"}]}], "}"}]}], "}"}],
+               ",", 
+              RowBox[{"\[Sqrt]", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"2", "#", "*", "RRADIUS"}], "-", 
+                 SuperscriptBox["#", "2"]}], ")"}]}]}], "]"}], "&"}], "/@", 
+           RowBox[{"{", 
+            RowBox[{"PSIDES", ",", "PSPAWN", ",", "PJAILS"}], "}"}]}], ",", 
+          "\[IndentingNewLine]", "Blue", ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Cylinder", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "0", ",", 
+                  RowBox[{"#", "-", "RRADIUS", "-", "0.5"}]}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "0", ",", 
+                  RowBox[{"#", "-", "RRADIUS", "+", "0.5"}]}], "}"}]}], "}"}],
+               ",", 
+              RowBox[{"\[Sqrt]", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"2", "#", "*", "RRADIUS"}], "-", 
+                 SuperscriptBox["#", "2"]}], ")"}]}]}], "]"}], "&"}], "/@", 
+           RowBox[{"{", 
+            RowBox[{"PSIDES", ",", "PSPAWN", ",", "PJAILS"}], "}"}]}], ",", 
+          "\[IndentingNewLine]", "Gray", ",", "\[IndentingNewLine]", 
+          RowBox[{"Cyinder", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0", ",", 
+               RowBox[{"-", "0.5"}]}], "}"}], ","}], "}"}], "]"}]}], 
+         "\[IndentingNewLine]", "}"}], "]"}], "\[IndentingNewLine]", "]"}]}], 
+     "\[IndentingNewLine]", "}"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"RRADIUS", ",", "200", ",", "\"\<Shell Radius\>\""}], "}"}], 
+     ",", "1", ",", "400"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"PRADIUS", ",", "2", ",", "\"\<Player Radius\>\""}], "}"}], ",",
+      "1", ",", "20"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"PPT", ",", "6", ",", "\"\<Player Count\>\""}], "}"}], ",", "1",
+      ",", "8", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"PSIDES", ",", "150", ",", "\"\<Side Plane\>\""}], "}"}], ",", 
+     "PSPAWN", ",", "200"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"PSPAWN", ",", "100", ",", "\"\<Spawn Plane\>\""}], "}"}], ",", 
+     "PJAILS", ",", "PSIDES"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"PJAILS", ",", "50", ",", "\"\<Jail Plane\>\""}], "}"}], ",", 
+     "0", ",", "PSPAWN"}], "}"}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdzk0ogwEcBvA3hWXTpmnzsYUNY1HbKPuQ2hStJHZg5kArNZTPnHyEpLWW
+cHeZNTuNtdRILthCc2JlyWhta60pdjDTxvu8h3+/np7n8K8zzuomCgiCqCYP
+ig7okYwpqQ7FRXFYPyL4gFsNxYU/pArHIQPm2c8VMHAb58E1gUoIlSGmCA4x
+6VKoj6TbqX32SQPfaHtEjtRrriyELQtRGpWvDM1wUz7TBu1cqxbuDyv18Nq6
+vAr9qcYT9mRS7bqQeuB76W8UWiw7CSivafqGMstSDnKOirrLSfVmYy8MjXb0
+w5hfa4CPMc8YzMgS09Bnos3D9JdwAwYSDDGPVOPmU875sq0wYuuRwKndRRuf
+VBtl2WFwIOyCnNOHY+h0Bs/gdufgOdXrxHeQ5UyFoVchicGX+/VPuDJekoXu
+1zLKS4crD9Um+R+84TJVtfi/r6oL/gPv2Nk3
+  "]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`PJAILS$$ = 50, $CellContext`PPT$$ = 
+    6, $CellContext`PRADIUS$$ = 9.85, $CellContext`PSIDES$$ = 
+    150, $CellContext`PSPAWN$$ = 100, $CellContext`RRADIUS$$ = 200, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`RRADIUS$$], 200, "Shell Radius"}, 1, 400}, {{
+       Hold[$CellContext`PRADIUS$$], 2, "Player Radius"}, 1, 20}, {{
+       Hold[$CellContext`PPT$$], 6, "Player Count"}, 1, 8, 1}, {{
+       Hold[$CellContext`PSIDES$$], 150, "Side Plane"}, 
+      Dynamic[$CellContext`PSPAWN$$], 200}, {{
+       Hold[$CellContext`PSPAWN$$], 100, "Spawn Plane"}, 
+      Dynamic[$CellContext`PJAILS$$], 
+      Dynamic[$CellContext`PSIDES$$]}, {{
+       Hold[$CellContext`PJAILS$$], 50, "Jail Plane"}, 0, 
+      Dynamic[$CellContext`PSPAWN$$]}}, Typeset`size$$ = {430., {246., 16.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`RRADIUS$14288$$ = 0, $CellContext`PRADIUS$14289$$ = 
+    0, $CellContext`PPT$14290$$ = 0, $CellContext`PSIDES$14291$$ = 
+    0, $CellContext`PSPAWN$14292$$ = 0, $CellContext`PJAILS$14293$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`PJAILS$$ = 50, $CellContext`PPT$$ = 
+        6, $CellContext`PRADIUS$$ = 2, $CellContext`PSIDES$$ = 
+        150, $CellContext`PSPAWN$$ = 100, $CellContext`RRADIUS$$ = 200}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`RRADIUS$$, $CellContext`RRADIUS$14288$$, 0], 
+        Hold[$CellContext`PRADIUS$$, $CellContext`PRADIUS$14289$$, 0], 
+        Hold[$CellContext`PPT$$, $CellContext`PPT$14290$$, 0], 
+        Hold[$CellContext`PSIDES$$, $CellContext`PSIDES$14291$$, 0], 
+        Hold[$CellContext`PSPAWN$$, $CellContext`PSPAWN$14292$$, 0], 
+        Hold[$CellContext`PJAILS$$, $CellContext`PJAILS$14293$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`p1 = (0.5 
+          Sqrt[(2 $CellContext`PSPAWN$$) $CellContext`RRADIUS$$ - \
+$CellContext`PSPAWN$$^2]) 
+         Map[AngleVector, (2 
+            Pi) ((Range[$CellContext`PPT$$] - 
+             1)/$CellContext`PPT$$)]; $CellContext`p2 = (0.5 
+          Sqrt[(2 $CellContext`PSPAWN$$) $CellContext`RRADIUS$$ - \
+$CellContext`PSPAWN$$^2]) 
+         Map[AngleVector, (2 
+            Pi) ((Range[$CellContext`PPT$$] - 1/
+             2)/$CellContext`PPT$$)]; $CellContext`q1 = 
+        Map[Append[#, $CellContext`RRADIUS$$ - $CellContext`PSPAWN$$]& , \
+$CellContext`p1]; $CellContext`q2 = 
+        Map[Append[#, $CellContext`PSPAWN$$ - $CellContext`RRADIUS$$]& , \
+$CellContext`p2]; {"Spawn disk radius: ", 
+         Sqrt[(
+            2 $CellContext`PSPAWN$$) $CellContext`RRADIUS$$ - \
+$CellContext`PSPAWN$$^2], "\n", 
+         Graphics[
+          Flatten[{Red, 
+            Map[Disk[#, $CellContext`PRADIUS$$]& , $CellContext`p1], Blue, 
+            Map[Disk[#, $CellContext`PRADIUS$$]& , $CellContext`p2]}]], 
+         Graphics3D[
+          Flatten[{Red, 
+            Map[Sphere[#, $CellContext`PRADIUS$$]& , $CellContext`q1], Blue, 
+            Map[Sphere[#, $CellContext`PRADIUS$$]& , $CellContext`q2], 
+            Opacity[0.2], Gray, 
+            Sphere[{0, 0, 0}, $CellContext`RRADIUS$$], 
+            Opacity[0.05], 
+            EdgeForm[], Red, 
+            Map[
+            Cylinder[{{0, 0, $CellContext`RRADIUS$$ - # - 0.5}, {
+               0, 0, $CellContext`RRADIUS$$ - # + 0.5}}, 
+              
+              Sqrt[(2 #) $CellContext`RRADIUS$$ - #^2]]& , \
+{$CellContext`PSIDES$$, $CellContext`PSPAWN$$, $CellContext`PJAILS$$}], Blue, 
+            Map[
+            Cylinder[{{0, 0, # - $CellContext`RRADIUS$$ - 0.5}, {
+               0, 0, # - $CellContext`RRADIUS$$ + 0.5}}, 
+              
+              Sqrt[(2 #) $CellContext`RRADIUS$$ - #^2]]& , \
+{$CellContext`PSIDES$$, $CellContext`PSPAWN$$, $CellContext`PJAILS$$}]}]]}), 
+      "Specifications" :> {{{$CellContext`RRADIUS$$, 200, "Shell Radius"}, 1, 
+         400}, {{$CellContext`PRADIUS$$, 2, "Player Radius"}, 1, 
+         20}, {{$CellContext`PPT$$, 6, "Player Count"}, 1, 8, 
+         1}, {{$CellContext`PSIDES$$, 150, "Side Plane"}, 
+         Dynamic[$CellContext`PSPAWN$$], 
+         200}, {{$CellContext`PSPAWN$$, 100, "Spawn Plane"}, 
+         Dynamic[$CellContext`PJAILS$$], 
+         Dynamic[$CellContext`PSIDES$$]}, {{$CellContext`PJAILS$$, 50, 
+          "Jail Plane"}, 0, 
+         Dynamic[$CellContext`PSPAWN$$]}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{485., {248., 255.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.6789865580475016`*^9, 3.678986577365182*^9}, {
+   3.678989583093401*^9, 3.678989600742132*^9}, 3.6789896952191114`*^9, {
+   3.678989979203948*^9, 3.678990002962743*^9}, {3.6789900495752153`*^9, 
+   3.6789900595563307`*^9}, 3.678990102237468*^9, {3.6789901345818295`*^9, 
+   3.67899015800931*^9}, {3.6789901926916437`*^9, 3.678990220311077*^9}, 
+   3.6789902524907002`*^9, 3.678990288942691*^9}]
+}, Open  ]]
+},
+WindowSize->{1600, 814},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 29, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 7805, 194, 974, "Input"],
+Cell[8388, 218, 5746, 109, 521, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

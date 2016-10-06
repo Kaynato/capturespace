@@ -1,0 +1,19 @@
+{
+  "name": "@caesura/amoe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Zicheng Gao",
+  "license": "ISC",
+  "dependencies": {
+    "babylonjs": "^2.4.0",
+    "cannon": "^0.6.2",
+    "express": "^4.14.0",
+    "jsonfile": "^2.3.1",
+    "simple-quadtree": "^0.1.3"
+  }
+}

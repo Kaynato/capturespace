@@ -1,0 +1,1 @@
+coffee -c -b src/server/lib/util.coffee & coffee -c src/server/server.coffee & coffee -c -b src/client/js/client.coffee & coffee -c -b src/client/js/game.coffee & npm start

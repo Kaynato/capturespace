@@ -1,0 +1,291 @@
+Changes that don't have anything to do with commits
+
+2016
+
+July 17
+
+	Began change.log
+	Scrapped the whole 4D and 3D idea because it's a hassle and possibly distracting complication
+
+	It's going to be 2D.
+
+	
+July...
+
+	Forgot a few days?
+	Changed mind about 2D due to existence of TagPro.
+	Discovered BabylonJS, which will be used in the client.
+	CANNON will be used in the server.
+
+	Finished most room setup things (except for coordinate distribution)
+
+July 23
+
+	Renderer. Working on render.coffee
+	Set up babylon scene thing
+
+July 27
+
+	restored the hash and salt stuff
+
+July 28
+
+	passcode entry to website (for restricted access)
+	join game between server and client setup
+		function calls on correct callbacks (event skeleton slightly better)
+	added css for text
+	separated scene work to FILE: GAME
+	some research about mesh collisions in BABYLONjs specifically
+	added physics enabler in scene
+
+	ahhhh oh my goodness i got the babylon scene stuff to all work ;-; (game.coffee)
+
+July 29
+	
+	attended funeral in the morning and noon, tutoring at night. not much done.
+	sphere for shell? will it work?
+
+July 30
+
+	slow day. sister painted nails right in front of the work desk which made focus difficult due to fumes and lung irritation. tutoring at 5-7.
+
+	configuration vetting
+	planar definitions and player distribution
+
+July 31
+
+	Distribution fully visualized with planes and everything
+	Adjusted them according to stuff
+
+	Distribution function written in util.js
+	next: put in server.coffee
+
+August 1
+	
+	Ehhhh.
+
+August 2
+
+	Distribution nonsense in server.coffee.
+	Realizing inefficiencies of passing "player" around in a ridiculous manner.
+
+	It might be too late to untangle this mess.
+	I messed up my planning again, it seems.
+
+	Set up way for objects to be passed into gamestart from roomjoin in connection handling in the game thing.
+
+	Then I mostly wrote.
+
+August 3
+	
+	Today morning I didn't really do all that much - woke up, such and so on.
+	There was an interesting dream. Desk, paper, joke, snyder, class, latin nationals...
+	
+	11:20 Went to the SHHS admin bldg & inquired about yearly scholarship renewal. Left a note, since Sh. Foundation folks were absent.
+	Stopped by SHHS. Visited office. Talked to nurse for a while and stopped by the old math classroom... Rolling stone's still on the walls. Photos...
+
+	12:40 Went home.
+	Had the yakitori rice.
+
+	1:30
+	Tutored Mirim.
+	got criticism from spejoku re; urdulir
+
+	3:30
+	put on the new episode of mob psycho for sister and her friend
+	then just kinda did nothing useful for a while i guess, played toram online
+	oh. yeah
+
+	dinner etc
+
+	daily walk outside etc
+
+	eagle time nonsense posting etc
+
+	it's 12:22... huh. At least i wrote my invoice.
+	finished javascript nonsense of pushing object to "objects" which is then sent from server to client, to describe coords. the entire object is of course not sent because that's silly
+
+	the contents of the clientside switch statement are for tomorrow.
+	there's also lots of tutoring tomorrow though. an opportunity (1-3 PM) to revise the urdulir draft?
+	maybe I'll play tera
+
+	didn't play tera.
+	spent (wasted) time on baiting eala and then toram... jeez, why do I play that
+
+August 4
+
+	got up around 10 and went downstairs at ~ 11.
+	made noodles. egg drop attempt failed, became half-steamed egg boil or something. it was ok.
+	Tutored Parth today morning @ 1. Poor writing :V
+	space-time compression.........!?
+
+	house set of lolk in bgm
+	eagletime nonsense posting as usual (nothing to do)
+
+	liza's net was having some serious problems so we couldn't play or watch anything
+	it's already 4 now
+	deliberated about preparing to tutor until around 5 at which point i drove to tutor the other student
+	student's getting better, which is good.
+	session ended at 7
+
+	went back home and had dinner. the chicken sausage-infused rice and the dried tofu, onion, banana pepper strips with minced beef. so good.
+
+	eagletime passes time. people are posting little today.
+	i was supposed to charge the camera since we leave for quebec saturday
+
+	feeling pathetic
+
+	walked/jogged outside. back home around 9. deliberated and did nothing for about one hour. took shower.
+	it's 10:20 or something.
+	went downstairs and why did i do that anyway
+
+	oh. forgot i moved a bunch of boxes for ma and also killed ~9 flies today (Where are they coming from)
+
+	deliberated on computer doing nothing useful.
+	attempted to join quiplash run by eversor 'n friends but ended up in audience so I quit on the second round
+
+	people are not posting much today on eagletime
+
+	it's 12:00 already
+
+	12:46 liza calls on phone 
+
+August 5
+
+	11:00 up or so
+	food today was the yakisoba. it was alright
+	1:30 actually start to try and do things
+
+	didn't really do things
+	applied to chocpi new godhood
+
+	4:00
+	started investigation to jailbreak iphone
+
+	5:30 also played drawful
+	6:00 tutored
+
+	installing iphone stuff all the way to 9:30
+	wash dishes, pack for canada vacation
+
+Aug 6
+	Vacation, drove to ottawa
+Aug 7
+	ottawa
+Aug 8
+	ottawa
+Aug 9
+	ottawa
+	drove to montreal, dinner
+Aug 10
+	montreal, food, streets, stolen from, filing report
+Aug 11
+	montreal, customs, lunch, driving to quebec
+Aug 12
+	quebec city
+Aug 13
+	driving home.
+	customs.
+	thousand islands (hill island)
+	ithaca and cornell
+	corning glass museum
+
+Aug 14
+	relax at home.
+
+	clientside work mostly today
+		processing and rendering
+		all that nonsense is working at the least now!!
+
+	problems:
+		player is black?
+		player is white?
+
+	camera movement?
+
+Aug 15
+	parents went around the quest of bureaucracy today
+	tutoring at 3:30, drove there and back. fun.
+	kids came over so it was not so productive
+	fixed a weird coord thing with the spheres.
+	added cam control for testing.
+	
+
+	player is black...?
+
+	todo:
+		color players
+		less weird reflectivity
+		shell should be a dark color and not reflect so much...
+		players should be mostly uniform, unreflective color.
+
+		camera constraints (keep a debug mode)
+		player movement
+
+	forgot to write invoice.
+
+Aug 16
+
+	PUSHED TO HEROKU
+	Time to write invoice
+	wrote invoice
+
+	tutoring today also
+
+	fixed colors today
+	fixed weird reflectivity
+
+	beginning work on controls and callbacks and game logic
+	gameloop can be accessed, I'm so glad
+
+Aug 17
+	what did I do today besides play disgaea
+
+	oh yeah, tutoring
+
+Aug 18
+	Played disgaea
+	also set up dorf fort worldgen
+		china and also
+		central continent (sjzl)
+
+	tutoring
+
+NEXT:
+
+	capture space webgame
+		7-29 play area shell
+		7-31 distribute players
+
+		8-14 visualization client-side
+
+		8-15 camera movement 
+
+		camera with max distance from player constraint
+		
+		acquire VIEW VECTOR from client to send to server
+		movement client-side
+		movement server-side
+
+		synchronization, projection, and correction
+
+		collision
+			player-player
+			player-shell
+			player-item
+			jailedplayer-jail wall
+
+		player status name things on the side of the page I guess
+
+		item spawning
+		item vector graphics (billboards)
+
+		player item acquisition
+
+		player colors
+		player nametags (billboards)
+
+		player item-holding color glow
+
+	urdulir story
+

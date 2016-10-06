@@ -1,0 +1,165 @@
+>> send to server
+<< send to client
+$ server internal
+* client internal
+
+Login protocol:
+
+	*PAGE OPEN
+	*ON PAGE LOADED
+
+	>> PING SERVER (Establishing connection...)
+		<< Ok / Timeout
+
+	* Login / Play as Guest / New User
+		>> Send login info / New User Info
+			Check info
+				Y: Return playerdata, Session ID, login player serverside
+				N: Return No
+		>> Guest
+			Clone and return guestdata, Session ID
+
+	Obtained Info?
+
+	<< Server / Room listing with internal IDs
+		Obtained Info?
+
+	Choose Server / Room
+
+
+
+
+	Rooms contain {
+		Array of Actors [
+			Actor {
+				type = player
+				Player (cloned) {
+					Session ID (socket.id)
+					Name
+					Color / Skin
+					# Score Data
+				}
+				3-Vector
+				QE 
+				Velocity
+				Item
+				Status (Jailed or not)
+			}
+		]
+		Array of Obstacles [
+			Obstacle {
+				Vertices [
+					3vecs (relative to center)
+				]
+				3-Vector
+				QE
+				Velocity
+			}
+		]
+		Array of Items [
+			3-Vector
+			QE
+		]
+		Chat [
+			Message {
+				Text
+				Timestamp
+				Originating Playername
+			}
+		]
+		Determining function for jail areas, player areas, etc.
+		Room ID
+	}
+
+
+Physics object:
+
+
+
+Collision calculations
+	Project position
+	Determine Clip (if no clip, that's good, end it)
+	IF CLIP
+	BOUNCE
+		Identify point of collision
+		Move to point of collision, and determine leftover vel-mag (LVM)
+		Recalculate velocity
+	Project position with LVM
+
+
+
+
+
+
+Rules Easier Edition:
+	(Mutually exclusive - video isn't sound, video isn't text.)
+	1: Text bird
+	2: Image bird
+	3: Video of bird
+	4: Description of bird (include as text, doesn't need to have a bird word in it)
+	5: Sound of bird
+
+ffmpeg -i "https://video.twimg.com/ext_tw_video/751805219642548224/pu/pl/CslKiIMv0z7xpbtV.m3u8" -c copy CslKiIMv0z7xpbtV.m3u8
+
+ffmpeg -i "https://video.twimg.com/ext_tw_video/751805219642548224/pu/pl/CslKiIMv0z7xpbtV.m3u8" -c h264_qsv target.mkv
+
+
+[img]https://i.gyazo.com/dd5be0b951d95876f94425e41f4b7898.png[/img][img]https://i.gyazo.com/bc15b1df9fbb2d1f6c0f53029a9031ab.png[/img][img]https://i.gyazo.com/02d67ca5f31134f82943d9955dbce795.png[/img]
+[img]https://i.gyazo.com/c289f86170d6ef036612b00c53b11af6.png[/img][img]https://i.gyazo.com/eea0cace3429b6363ec9cdf8913eede5.png[/img][img]https://i.gyazo.com/d9bb4c7421e3aebbb616c4705cf9a9ec.png[/img][img]https://gyazo.com/fc3ca87897526949af3f85440dfe7e56.png[/img][img]https://gyazo.com/b2564e0681123b65e7dd51268cb93bb3.png[/img][img]https://i.gyazo.com/e8059daf512a9ce2d217353b5bf86608.png[/img]
+[img]https://i.gyazo.com/5305f1b620efe6f084f2a68a680a76b0.png[/img][img]https://gyazo.com/da1ae52667e0f113291ad8b1c358021e.png[/img][img]https://i.gyazo.com/410afb8dd0e3b5ce27e95c551e05c1cd.png[/img][img]https://gyazo.com/f29b871ff695f558fbeff64e8f3682e3.png[/img]
+
+
+
+
+
+
+
+Hey, what are these objects again anyway?
+
+	pinfo
+		id - socket id
+		name - player name string
+		color - rgb color
+		skin - TODO
+
+	player
+		info{TYPE:PINFO}
+		body - cannon body
+		item - int enum item
+		jailed - bool
+		team - -1 unassigned, positive is teams (0, 1)
+		room{TYPE:ROOM}
+
+
+	room
+		id - int
+		players[] - player object array
+		world - cannon world
+		chat[] - dunno
+		excise(player) - remove player
+		getset(this, time) - prep for init
+		start() - start room
+		stop() - stop room
+
+	item
+		type - int enum item
+		body - cannon body
+
+
+# SENT OBJECTS - not real objects.
+	"optimized" for low size.
+
+	shell
+		name - THIS IS A SHELL
+		radius - cfg radius
+		mass - 0
+		position - center
+
+	player
+		name - WHAT KIND OF THING IS THIS
+		info{TYPE:PINFO}
+		team - team int, from player
+		id - socket id. used for identifying self
+		radius - cfg radius
+		mass - cfg mass
+		position - where this player will spawn. [x, y, z] ints

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-16">
+    <title>AMOE</title>
+
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+
+    <div id="startMenuWrapper">
+        <div id="startMenu">
+            <p>Capturespace</p>
+
+            <b class="inp-un">Enter a name:</b>
+            <br>
+            <input type="text" tabindex="0" autofocus placeholder="Name" id="playerNameInput"/>
+            <br>
+            <!-- <button id="entry_login">Login</button> -->
+            <button id="entry_guest">Play<!-- as Guest --></button>
+        </div>
+    </div>
+
+    <div id="onScreenWrapper" class="nopoint">
+        <div id="textArea">
+        </div>
+        
+        <div id="gameTime">
+        </div>
+
+        <div id="gameQueue">
+        </div>
+
+        <div id="gameItem">
+        </div>
+
+        <div id="gameScore">
+        </div>
+    </div>
+
+    <div id="gameCanvas" style="display:none;">
+        <canvas tabindex="1" id="cvs"></canvas>
+    </div>
+
+
+
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="./js/cannon.min.js"></script>
+    <script src="http://cdn.babylonjs.com/2-4/babylon.js"></script>
+    <script src="./js/render.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/client.js"></script>
+</body>
+</html>
